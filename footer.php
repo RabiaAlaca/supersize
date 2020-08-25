@@ -11,7 +11,7 @@
                 <span>What is better for you?</span>
             </li>
             <li class="w3-padding-16">
-                <img src="../w3images/symbol2.jpg" class="w3-left w3-margin-right" style="width:50px">
+                <img src="./w3images/symbol2.jpg" class="w3-left w3-margin-right" style="width:50px">
                 <span class="w3-large">Healt</span><br>
                 <span>Life with Sport</span>
             </li>
