@@ -1,27 +1,32 @@
 <?php
 
 
-class dbController
-{
+// Database Connection Properties
+ define('host', 'localhost');
+ define ('user', 'root');
+ define('password', '');
+ define('database', 'shopee');
 
-//define database
+//call constructor
+try {
 
-    protected $host = 'localhost';
-    protected $user = 'root';
-    protected $password = '';
-    protected $database = 'produkte';
 
-    public function__construct()
-
-{
-$connect = new PDO("mysql:host=".dbhost."; dbname=".dbname, dbuser, dbpass);
-$connect->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+    $con = new PDO("mysqli:host=" . host . "; name=" . database, user, password);
+    $result = mysqli_query(con, "SELECT * FROM shopee");
 }
-
-
+catch
+(PDOException $e){
     echo $e->getMessage();
 }
+$data = array();
+if (mysqli_num_rows(result) > 0)
+{
+    while ($row = mysqli_fetch_assoc(result))
+    {
+        $data[] = row;
+    }
+
+    echo json_encode(data);
 }
 
 
-$db = new dbController();
